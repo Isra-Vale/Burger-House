@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-white bg-dark-900;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-burger-orange;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-burger-yellow;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 font-semibold text-white transition-all duration-300 transform rounded-full shadow-lg bg-burger-orange hover:bg-burger-yellow hover:text-dark-900 hover:scale-105 shadow-burger-orange/25;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 font-semibold transition-all duration-300 border-2 rounded-full border-burger-orange text-burger-orange hover:bg-burger-orange hover:text-white;
+  }
+
+  .glass-card {
+    @apply border bg-dark-800/80 backdrop-blur-md border-white/10 rounded-2xl;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 transition-colors border bg-dark-900 border-white/10 rounded-xl focus:outline-none focus:border-burger-orange placeholder:text-gray-600;
+  }
+  .input-error {
+    @apply border-burger-red focus:border-burger-red;
+  }
+  .btn-danger {
+    @apply px-6 py-3 font-semibold text-white transition-all duration-300 rounded-full bg-burger-red hover:bg-red-600;
+  }
+}
